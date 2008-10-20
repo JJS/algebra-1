@@ -1,0 +1,85 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{picins}
+\usepackage{framed}
+\usepackage[nohead,nofoot,lmargin=1.5cm,rmargin=1.5cm,tmargin=1.5cm,bmargin=1.5cm,headsep=0.5cm,headheight=12.4pt, foot=0.75cm]{geometry}
+\title{Algebra 1 Mitschrift}
+\author{JJS}
+
+\newcounter{def}
+\newcounter{satz}
+\newcounter{bem}
+\newcounter{bew}
+\newcounter{bei}
+
+\newenvironment{fshaded}{%
+\def\FrameCommand{\fcolorbox{framecolor}{shadecolor}}%
+\MakeFramed {\FrameRestore}}%
+{\endMakeFramed}
+
+\renewcommand{\section}[1]{\setcounter{def}{0}\setcounter{satz}{0}\setcounter{bem}{0}\setcounter{bew}{0}\setcounter{bei}{0}\stepcounter{section}\noindent\begin{LARGE}\textsc{\thesection. Kapitel: #1}\end{LARGE}}
+
+
+\newcommand{\fdatum}[1]{\hfill#1\\}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\newenvironment{defi}[1][]{
+\definecolor{shadecolor}{rgb}{0.6,0.6,1}
+\definecolor{framecolor}{rgb}{0.6,0.6,1}
+\begin{fshaded}
+\noindent\textsc{\stepcounter{def}\begin{large}Definition \thedef: \end{large}}#1\vspace{1mm}\hrule\vspace{1mm}\noindent
+}{\end{fshaded}}
+
+\newenvironment{satz}[1][]{
+\definecolor{shadecolor}{rgb}{0.9,0.6,0.5}
+\definecolor{framecolor}{rgb}{0.9,0.6,0.5}
+\begin{fshaded}
+\noindent\textsc{\stepcounter{satz}\begin{large}Satz \thesatz: \end{large}}#1\vspace{1mm}\hrule\vspace{1mm}\noindent
+}{\end{fshaded}}
+
+\newenvironment{bem}[1][]{
+\definecolor{shadecolor}{rgb}{0.8,0.8,0.8}
+\definecolor{framecolor}{rgb}{0.8,0.8,0.8}
+\begin{fshaded}
+\noindent\textsc{\stepcounter{bem}\begin{large}Bemerkung: \end{large}}#1\vspace{1mm}\hrule\vspace{1mm}\noindent
+}{\end{fshaded}}
+
+\newenvironment{bew}[1][]{
+\definecolor{shadecolor}{rgb}{1,0.7,0.6}
+\definecolor{framecolor}{rgb}{1,0.7,0.6}
+\begin{fshaded}
+\noindent\textsc{\stepcounter{bew}\begin{large}Beweis: \end{large}}#1\vspace{1mm}\hrule\vspace{1mm}\noindent
+}{\end{fshaded}}
+
+\newenvironment{bei}[1][]{
+\definecolor{shadecolor}{rgb}{0.7,0.7,1}
+\definecolor{framecolor}{rgb}{0.7,0.7,1}
+\begin{fshaded}
+\noindent\textsc{\stepcounter{bei}\begin{large}Beispiel: \end{large}}#1\vspace{1mm}\hrule\vspace{1mm}\noindent
+}{\end{fshaded}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Seite \thepage}
+\lhead{Algebra 1 Mitschrift}
+\lfoot{WS 08/09}
+\cfoot{Jan Sommer}
+\rfoot{sommerj@in.tum.de}
+\setcounter{section}{-1}
+\begin{document}
+%\maketitle
+%\pagebreak
+\include{081013}
+\include{081017}
+\include{081020}
+\end{document}

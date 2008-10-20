@@ -1,0 +1,144 @@
+\fdatum{20.10.2008}
+\begin{bem}
+$a_n=xa_0+ya_1$?\\[1ex]
+$a_{k-1}=q_ka_k+a_{k+1}$\\[1ex]
+\begin{align*}
+\left(\begin{array}{c}a_k\\a_{k-1}\end{array}\right)&=\left(\begin{array}{cc}0&1\\1&q_k\end{array}\right)\left(\begin{array}{c}a_{k+1}\\a_k\end{array}\right)\\
+&=\dots\\
+&=\underbrace{\left(\begin{array}{cc}0&1\\1&&q_1\end{array}\right)\dots\left(\begin{array}{cc}0&1\\1&q_k\end{array}\right)}_{=:M}\left(\begin{array}{c}a_{k+1}\\a_k\end{array}\right)
+\end{align}
+\[\Rightarrow\qquad\left(\begin{array}{c}0\\a_n\end{array}\right)=M^{-1}\left(\begin{array}{c}a_1\\a_0\end{array}\right)\]
+\end{bem}
+
+\end{document}
+\begin{satz}[Die Primzahlen]
+Für ganze Zahlen $p>1$ sind je zwei der folgenden drei Bedingungen äquivalent:
+\begin{enumerate}[(1)]
+\item 1 und $p$ sind die einzigen positiven Teiler von $p$.
+\item $\forall a,b\in\mathbb Z$: $p\vert ab$ $\Rightarrow$ $p\vert a$ oder $p\vert b$
+\item In der durch Inklusion geordneten Menge alle von $\mathbb Z$ verschiedenen Untergruppen von $\mathbb Z$ ist $p\mathbb Z$ maximal.
+\end{enumerate}
+Erfüllt $p$ eine dieser Bedingungen, heißt $p$ \textbf{Primzahl}.
+\end{satz}
+
+\begin{bew}
+\textit{(1)} $\RIghtarrow$ \textit{(2)}:\\[1ex]
+$p\vert ab$ $\Rightarrow$ $p\mathbb Z+ab\mathbb Z=p\mathbb Z$, also $ggT(p,ab)=p$.\\[1ex]
+Sei $p\not\vert a$. Dann $ggT(p,a)=1$\\[1ex]
+Rechenregel \textit{(4)} $\Rightarrow$ $ggT(p,b)=p$, also $p\vert b$.\\[1ex]
+\textit{(2)} $\Rightarrow$ \textit{(3)}:\\[1ex]
+Sei also $q\in\mathbb n$ mit
+\[p\mathbb Z\subset q\mathbb Z\subset\mathbb Z\qquad(\star)\]
+zz.: $q\mathbb Z=\mathbb Z$ oder $q\mathbb Z=\mathbb Z$.\\[1ex]
+$(\star)$ $\Rightarrow$ $q\vert p$\\[1ex]
+$\exists q'\in\mathbb N$: $qq'=p$ $\Rightarrow$ $p\vert qq'$ $\overset{(2)}{\Rightarrow}$ $p\vert q$ oder $p\vert q'$\\[1ex]
+Ist $p\vert q$, so folgt mit $q\vert p$: $p=q$, also $q\matbb Z=p\mathbb Z$.\\[1ex]
+Ist $p\vert q'$, so existiert $q''\in\mathbb N$: $pq''=q'$ $\Rightarrow$ $p=qq'=pq''q$ $\Rightarrow$ $q=1$ $\Rightarrow$ $q\mathbb Z=\mathbb Z$.\\[1ex]
+\textit{(3)} $\Rightarrow$ \textit{(1)}:\\[1ex]
+Sei $q\in\mathbb N$ mit $q\vert p$ $\Rightarrow$ $p\mathbb Z\subset q\mathbb Z\subset\mathbb Z$ $\overset{(3)}{\Rightarrow}$ $q\mathbb Z=p\mathbb Z$ oder $q\mathbb Z=1\mathbb Z$ $\overset{\text{Satz 2}}{\Rightarrow$ $q=p$ oder $q=1$\hfill$\square$
+\end{bew}
+
+\begin{bem}
+Aus \textit{(2)} folgt induktiv für Primzahlen $p$ und $a_1,\dots,a_n$:\\[1ex]
+$p\vert a_1\cdots a_n$ $\Rightarrow$ $\exists i\in\{1,\dots,n\}$: $p\vert a_i$
+\end{bem}
+
+\begin{bem}[zu Primzahlen]
+\begin{enumerate}[(1)]
+\item Euklid: Es gibt unendlich viele Primzahlen.\\[1ex]
+Seien $p_1,\dots,p_n$ Primzahlen\\[1ex]
+$N:=p_1\dots p_n+1\geq2$\\[1ex]
+$N=q_1\dots q_s$ mit Primzahlen $q_1,\dots,q_s$.\\[1ex]
+Behauptung: $q_1\not\in\{p_1,\dots,p_n\}$.\\[1ex]
+Denn wäre $q_1=p_i$, so
+\[q_1\vert p_1\dots p_n\:\wedge\:q_1\vert N\:\Rightarrow\:q_1\vert\underbrace{N-p_1\dots p_n}_{=1}\quad\blitz\]
+\item Die sämtlichen Primzahlen $p\leq x$ kann man mit dem Sieb des Eratosthenes ermitteln.
+\[\pi(x):=\sum_{p\leq x}1=\text{ Anzahl der Primzahlen }\leq x\]
+Das Brunsche Sieb:\\[1ex]
+Euler: $\sum_{p\text{ prim}}\frac1p=\infty$\\[1ex]
+Primzahlzwilling $(q,q+2)$, $q$, $q+2$ Primzahlen:\\[1ex]
+$\sum_{(q,q+2)\text{ Zwilling}}\frac1q<\infty$\\[1ex]
+Für die $n$-te Primzahl $p_n$ gilt
+\[\p_n\sim n\log n\]
+Und:
+\[\sum_{n\geq2}\frac1{n\log n}=\infty\]
+Vermutung: Für den $n$-ten Zwilling $(q_n,q_n+2)$ gilt:
+\[q_n\sim c_0 n(\log n)^2\]
+\[\sum_{n\geq2}\frac1{n(\log n)^2}<\infty\]
+\item Große Primzahlen: $N\in\mathbb N$
+\begin{itemize}
+\item Dividiere $N$ durch alle $d$ mit $2\leq d\leq N-1$
+\item Dividiere $N$ durch alle $d$ mit $2\leq d\leq\sqrt N$, da:\\[1ex]
+Ist $d\vert N$, so $d'd=N$. Ist $d>\sqrt N$, so $d'<\sqrt N$
+\item Dividiere $N$ durch alle $d$ mit $2\leq d\leq\sqrt N$, $d$ prim\\[1ex]
+Es gibt Zahlen gewisser Bauarten, bei denen schnell entschieden werden kann, ob sie prim sind:\\[1ex]
+Die \textit{}Mersenneschen Zahlen:
+\[M_k:=2^k-1\]
+$M_k$ prim $\Rightarrow$ $k$ prim\\[1ex]
+Umkehrung falsch: $M_{11}=2047=23\cdot89$\\[1ex]
+Lucas-Test für die Mersenne-Zahlen ($\mathbb Z[\sqrt3]=\mathbb Z+\sqrt3\mathbb Z$ Quadratische Reziprozitätsgesetz)\\[1ex]
+Definiere Folge $(s_n)_{n\geq0}:$ $s_0=4$, $s_{n+1}=s_n^2-2$, $s_4\sim1,5\cdot10^9$\\[1ex]
+Für Primzahlen $p>2$ gilt:
+\[M_p\text{ prim}\:\Leftrightarrow\:M_p\verts_{p-2}\]
+1876: $M_{127}$ ist prim:
+\[M_{127}=1701\:41183\:46046\:92317\:31687\:30371\:58841\:05727\]
+DMV:\\[1ex]
+4-2003: $M_{20.896.001}$\\
+3-2004: $M_{24.036.583}$\\
+23.8.08: $M_{43.112.609}$\\[1ex]
+$s^k+1$ prim $\Rightarrow$ $k=2^n$\\[1ex]
+$\Rightarrow$ $F_n:=2^{2^n}+1$ Fermatsche Zahlen
+\item Der Primzahlsatz:\\[1ex]
+\[\pi(x)\sim\frac x{\log x}\]
+Bewiesen: 1896 Hadamard, de la Vallée Poussin\\[1ex]
+$\sim$ 1950: Selberg, Erdus\\[1ex]
+$\sim$ 1850: Tchebychev
+\end{itemize}
+\end{enumerate}
+\end{bem}
+
+\begin{satz}[Der Fundamentalsatz der Arithmetik]
+Zu jeder natürlichen Zahl $n>1$ gibt es genau eine Zerlegung (\textbf{kanonische Zerlegung} von $n$)
+\[n=\prod_{k=1}^rp_k^{a_k}\]
+mit Potenzen $p_k^{a_k}$ ($a_k\geq1$) von der Größe nach geordneter Primzahlen $p_1<\dots<p_r$.
+\end{satz}
+
+\begin{bew}
+\begin{enumerate}[(1)]
+\item Existenz: Induktiv: $n=2$ $\surd$\\[1ex]
+$n\geq3$: Ist $n$ Primzahl, so $\surd$.\\[1ex]
+Ist $n$ nicht Primzahl, so
+\[n=n_1n_2\quad\text{mit }1<n_1,n_2<n\]
+Nach Induktionsveraussetzung haben $n_1$ und $n_2$ kanonische Zerlegung, also auch $n$.
+\item Eindeutigkeit: Sei $\prod_{k=1}^rp_k^{a_k}=n=\prod_{l=1}^sq_l^{b_l}$ ($q_1<\dots<q_s$ Primzahlen)\\[1ex]
+Für $1\leq i\leq r$:
+\[p_i\vert LS\:\Rightarrow\:p_i\vert RS\:\Rightarrow\:p_i\vert q_l\text{ für ein }l\in\{1,\dots,s\}\:\Rightarrow\:p_i=q_l\]
+umgekehrt ebenso $\Rightarrow$ $\{p_1,\dots,p_r\}=\{q_1,\dots,q_s\}$\\[1ex]
+Insbesondere $r=s$. Also:
+\[\prod_{k=1}^rp_k^{a_k}=n=\prod_{k=1}^rp_k^{l_k}\]
+zz.: $a_k=b_k$ ($1\leq k\leq r$).\\[1ex]
+Sei für ein $k$: $a_k<b_k$
+\[\Rightarrow\:\prod_{i=1\:i\neq k}^rp_i^{a_i}=\frac n{p_k^{a_k}}=\left(\prod_{i=1\:i\neq k}^ro_i^{b_i}\right)p_k^{b_k-a_k}\]
+mit $b_k-a_k>0$. Widerspruch zur Eindeutigkeit der Primteilermenge von $\frac n{p_k^{a_k}}$ (vgl. $(\star)$)
+\end{enumerate}
+\end{bew}
+
+\begin{bem}
+Eindeutigkeit: nicht immer gegeben
+\end{bem}
+
+\begin{bei}
+\begin{enumerate}[(1)]
+\item Triviales Beispiel:
+\[2\mathbb Z\text{ (Ring ohne 1)}\]
+\begin{align*}
+100&=10\cdot10\\
+&=2\cdot50
+\end{align*}
+\item $R=\{a+b\sqrt{-5}\::\:a,b\in\mathbb Z\}$
+\begin{align*}
+21&=3\cdot7\\
+&=\left(1+2\sqrt{-5}\right)\left(1-2\sqrt{-5}\right)
+\end{align*}^^^^^^^^
+\end{enumerate}
+\end{bei}

@@ -1,0 +1,135 @@
+\fdatum{13.10.2008}
+\section{Grundlegende Definitionen}
+
+\begin{defi}
+Eine \textbf{Gruppe} ist eine Menge $G$ mit einer Abbildung $G\times G\rightarrow G$, $(g,h)\mapsto gh$ (\textit{innere Verknüpfung}) derart, dass
+\begin{enumerate}[(G1)]
+\item Assoziativgesetz:
+\[\forall g,h,j\in G:\qquad(gh)j=g(hj)\]
+\item Existenz eines linksneutralen Elements:
+\[\exists e\in G\:\forall g\in G:\qquad eg=g\]
+\item Existenz von Linksinversen:
+\[\forall g\in G\:\exists g^*\in G:\qquad g^*g=e\]
+\end{enumerate}
+Ist $gh=hg$ ($\forall g,h\in G$) so heißt $G$ \textit{kommutativ} (\textit{abelsch}).\\[1ex]
+$\vert G\vert\in\mathbb N\cup\{\infty\}$ ist die Anzahl der Elemente von $G$ (\textit{Ordnung von $G$})
+\end{defi}
+
+\begin{bem}[Halbgruppe und Monoid]
+\noindent Gilt für  eine Menge $G$ nur das Assoziativgesetz \textit{(G1)}, handelt es sich um eine \textbf{Halbgruppe}.\\[1ex]
+Existiert zusätzlich ein neutrales Element $e\in G$ mit $eg=ge=g$ ($\forall g\in g$), spricht man von einem \textbf{Monoid}.
+\end{bem}
+
+\begin{bem}[Konsequenzen aus den Gruppenaxiomen]
+\begin{enumerate}[(1)]
+\item Das Linksneutrale in \textit{(G2)} ist eindeutig.
+\item Das $g^*$ zu $g$ in \textit{(G3)} ist eindeutig.
+\item Das Linksneutrale $e$ in \textit{(G2)} ist auch rechtsneutral, dh.
+\[ge=g\qquad(\forall g\in G)\]
+$e$ ist das neutrale Element der Gruppe.
+\item Das Linksinverse $g^*$ zu $g$ ist auch rechtsinvers, dh.
+\[gg^*=e\qquad(\forall g\in G)\]
+$g^*$ ist das Inverse zu $g$ ($g^{-1}$ statt $g^*$)
+\end{enumerate}
+\end{bem}
+
+\begin{bew}
+\begin{enumerate}
+\item[(4)] $g\in G$ gegeben. $g^*g=e$ und $g^{**}g^*=e$ nach \textit{(G3)}. Dann
+\[gg^*=e(gg^*)=(g^{**}g^*)(gg^*)=g^{**}(eg^*)=g^{**}g^*=e\]
+\item[(3)]
+\[ge=g(g^*g)=(gg^*)g\overset{(4)}{=}eg=g\]
+\item[(1)] Sei auch $e'\in G$ mit $e'g=g$ ($\forall g\in G$)\\[1ex]
+$\Rightarrow$ $e'e=e$ und $e'e=e'$ nach \textit{(3)}\\[1ex]
+$\Rightarrow$ $e=e'$
+\item[(2)] Sei neben $g^*g=e$ auch $g'g=e$:
+\[g'=g'e=g'(g^*g)=g'(gg^*)=(g'g)g^*=eg^*=g^*\]
+\end{enumerate}
+\end{bew}
+
+\begin{bei}[$(\mathbb Z,+)$, $(a,b)\mapsto a+b$]
+\begin{itemize}
+\item Neutrales Element: $0$
+\item Inverse zu $a\in\mathbb Z$: $(-a)$ denn $(-a)+a=0$
+\end{itemize}
+$(\mathbb Z,+)$ ist kommutative Gruppe
+\end{bei}
+
+\begin{bem}[Rechenregeln in Gruppen]
+\begin{enumerate}[(1)]
+\item
+\[\left(g^{-1}\right)^{-1}=g\qquad(\forall g\in G)\]
+\item
+\[(gh)^{-1}=h^{-1}g^{-1}\qquad(\forall g,h\in G)\]
+\end{enumerate}
+\end{bem}
+
+\begin{bew}
+\begin{enumerate}[(1)]
+\item $g^{-1}g=e$: Das Inverse von $g^{-1}$ ist $g$:
+\[\left(g^{-1}\right)^{-1}=g\]
+\item $\left(h^{-1}g^{-1}\right)(gh)=e$: Das Inverse von $(gh)$ ist $h^{-1}g^{-1}$:
+\[(gh)^{-1}=h^{-1}g^{-1}\]
+\end{enumerate}
+\end{bew}
+
+\begin{defi}[Untergruppen]
+$G$ Gruppe. Eine Teilmenge $H\subset G$ heißt \textbf{Untergruppe} von $G$, wenn $H$ mit der Verknüpfung von $G$ selbst eine Gruppe ist.
+\end{defi}
+
+\begin{bei}
+\[(2\mathbb Z,+)\underset{\text{Untergruppe}}{\leq}(\mathbb Z,+)\]
+\end{bei}
+
+\begin{bem}
+Sei $H\leq G$ und sei $e_H$ das neutrale Element von $H$ und $e_G$ das neutrale Element von $G$. Dann ist
+\[e_H=e_G\]
+Sei $h\in H$ und $h'$ das Inverse von $h$ in $H$ und $h^{-1}$ das Inverse von $h$ in $G$. Dann ist
+\[h'=h^{-1}\]
+\end{bem}
+
+\begin{bem}[Untergruppenkriterium]
+$G$ Gruppe und $H\leq G$.
+\[H\leq G\:\Leftrightarrow\:H\neq\emptyset\wedge\left(g,h\in H\:\Rightarrow\:gh^{-1}\in H\right)\]
+\end{bem}
+
+\begin{bew}
+\begin{enumerate}
+\item[$\Rightarrow$] klar
+\item[$\Leftarrow$]
+\begin{itemize}
+\item \[(1):\:\exists h\in H\:\overset{(2)}{\Rightarrow}\:hh^{-1}\in H\:\Rightarrow\:e\in H\]
+\item Für $h\in H$ ist auch $eh^{-1}=h^{-1}\in H$
+\item $g,h\in H$ $\Rightarrow$ $g,h^{-1}\in H$ $\overset{(2)}{\Rightarrow}$ $g\left(h^{-1}\right)^{-1}\in H$, dh. $gh\in H$
+\end{itemize}
+\end{enumerate}
+\end{bew}
+
+\begin{defi}
+Ein \textbf{Ring} ist eine Menge $R$ mit zwei Abbildungen (\textit{innere Verknüpfungen})
+\begin{itemize}
+\item $R\times R\rightarrow R$, $(a,b)\mapsto a+b$ (Addition auf $R$)
+\item $R\times R\rightarrow R$, $(a,b)\mapsto ab$ (Multiplikation auf $R$)
+\end{itemize}
+derart, dass gilt:
+\begin{enumerate}[(R1)]
+\item $(R,+)$ ist abelsche Gruppe (neutrales Element $0$, $0_R$)
+\item $(R,\cdot)$ ist Monoid (neutrales Element $1$, $1_R$)
+\item Die Distributivgesetze: $\forall a,b,c\in R$:
+\begin{itemize}
+\item $a(b+c)=ab+ac$
+\item $(a+b)c=ac+bc$
+\end{itemize}
+\end{enumerate}
+$R$ heißt \textit{kommutativ} wenn die Multiplikation kommutativ ist. (Ring = Ring mit Eins)
+\end{defi}
+
+\begin{bei}
+\begin{itemize}
+\item $(\mathbb Z,+,\cdot)$
+\item $M_{n\times n}(\mathbb R)$ für $n\geq2$ nicht kommutativ
+\item $(2\mathbb Z,+,\cdot)$ kein Ring
+\item $R=\{O\}$ mit $O+O:=O$ und $O\cdot O:=0$ ($1_R=0_R$)
+\item $\vert R\vert>1$ $\Rightarrow$ $1_R\neq0_R$
+\end{itemize}
+\end{bei}

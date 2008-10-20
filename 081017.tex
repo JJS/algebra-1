@@ -1,0 +1,175 @@
+\fdatum{17.10.2008}
+\begin{bem}
+r \textbf{Einheit} von $R$ $\Leftrightarrow$ $\exists s\in R\::\:rs=sr=1_R$\\[1ex]
+$E(R)=R^X=$ Menge aller Einheiten von $R$, ist Gruppe bezüglich $\cdot$.
+\end{bem}
+
+\begin{bei}
+\begin{itemize}
+\item $E(\mathbb Z)=\{\pm1\}$
+\item $E(M_{n\times n}(\mathbb R))=\{A\in M_{n\times n}(\mathbb R)\::\:A\neq0\}=GL_n(\mathbb R)$
+\item Ist $R$ kommutativer Ring mit $R^X=R\setminus\{0\}$, so heißt $R$ \textbf{Körper} (z.B. $\mathbb Q$, $\mathbb R$, $\mathbb C$)
+\end{itemize}
+\end{bei}
+
+\newpage
+
+\section{Die ganzen Zahlen}
+
+\begin{satz}[Division mit Rest]
+Zu $a,b\in\mathbb Z$, $b>0$ existiert genau ein $q\in\mathbb Z$ mit
+\[0\leq a-q\cdot b<b\]
+\end{satz}
+
+\begin{bew}
+\[a+b\mathbb Z=\{a+bk\::\:k\in\mathbb Z\}\]
+enthält Zahlen aus $\mathbb N_0$, zB. $a+b\vert a\vert$\\[1ex]
+Induktionsaxiom (Jede nichtleere Teilmenge von $\mathbb N_0$ enthält ein kleinstes Element)
+\[r:=\min\left(a+b\mathbb Z\right)\cap\mathbb N_0\]
+Dann: $r\geq0$ und $r=a-q\cdot b$\\[1ex]
+Wäre $r\geq b$, so wäre
+\[0\geq r':=r-b=a-(q+1)b\in a+b\mathbb Z\]
+und $r'<r$. Widerspruch zur Wahl von $r$.\\[1ex]
+Eindeutigkeit von $q$:
+\[0\leq a-qb<b\]
+Es sei auch
+\[a\leq a-q'b<b\:\Rightarrow\:-b<-a+qb\leq0\]
+Also
+\[-b<(q'-q)b<b\]
+und damit
+\[-1<\underbrace{q'-q}_{\in\mathbb Z}<1\]
+$\Rightarrow$ $q=q'$
+\end{bew}
+
+\begin{satz}[Die Untergruppen von $(\mathbb Z,+)$]
+\begin{enumerate}[1)]
+\item Für jedes $n\in\mathbb N_0$ ist $n\mathbb Z$ Untergruppe von $\mathbb Z$
+\item Ist $M\leq\mathbb Z$, so existiert genau ein $n\in\mathbb N_0$ mit $M=n\mathbb Z$
+\end{enumerate}
+\end{satz}
+
+\begin{bew}
+\begin{enumerate}[1)]
+\item mit dem Untergruppenkriterium: $n\mathbb Z\neq\emptyset$ und
+\[a,b\in n\mathbb Z\:\Rightarrow\:\exists a',b'\in\mathbb Z\::\:a=na',\:b=nb'\:\Rightarrow\:a-b=n(a'-b')\in n\mathbb Z\]
+\item $M=\{0\}$. Dann eindeutig $M=0\mathbb Z$\\[1ex]
+Sei also $M\neq\{0\}$. Dann existiert $c\in M\setminus\{0\}$ $\Rightarrow$ $-c\in M$, weil $M$ Gruppe.\\[1ex]
+$\Rightarrow$ $M\cap\mathbb N\neq\emptyset$.\\[1ex]
+Induktionsaxiom: $n:=\min M\cap\mathbb N$.\\[1ex]
+Behauptung: $M=n\mathbb Z$
+\begin{enumerate}
+\item[$\supset$] $n\in M$ $\underset{\Rightarrow}{M\text{ Gruppe }}$ $\mathbb N\subset M$ $\underset{\Rightarrow}{M\text{ Gruppe}}$ $n\mathbb Z\subset M$
+\item[$\subset$] Sei $a\in M$. Division von $a$ durch $n$:
+\[a\leq a-qn<n\]
+für passendes $q\in\mathbb Z$.
+\[r=a-qn\in M\]
+denn $a\in M$, $n\in M$, $M$ Gruppe.\\[1ex]
+Also: $r\in\mathbb N_0\cap M$. Wegen $r<n$ folgt nach Wahl von $n$:
+\[r=0\]
+$\Rightarrow$ $a=qn\in n\mathbb Z$\\[1ex]
+Eindeutigkeit: Seien $n_1,n_2\in\mathbb N_0$ mit
+\[n_1\mathbb Z=b_2\mathbb Z\]
+\[n_1=0\:\Leftrightarrow\:n_2=0\]
+Sei also $n_1\neq0\neq n_2$.
+\[\min\left(n_1\mathbb Z\cap\mathbb N\right)=\min\left(n_2\mathbb Z\cap\mathbb N\right)\]
+\end{enumerate}
+\end{enumerate}
+\end{bew}
+
+\begin{bem}[Teilbarkeit von $\mathbb Z$]
+\[t,a\in\mathbb Z\::\:t\vert a\:(t\text{ teile }a)\:\Leftrightarrow\:\exists b\in\mathbb Z\::tb=a\]
+\end{bem}
+
+\begin{bei}
+\begin{itemize}
+\item $0\vert a$ $\Leftrightarrow$ $a=0$
+\item $a\vert0$ gilt stets
+\end{itemize}
+Es gilt: $t\vert a$ $\Leftrightarrow$ $t\mathbb Z\supset a\mathbb Z$.
+\end{bei}
+
+\begin{defi}[Der größte gemeinsame Teiler]
+Zu $a_1,\dots,a_n\in\mathbb Z$ ist
+\[\sum_{i=1}^na_i\mathbb Z=\left\{\sum_{i=1}^na_ib_i\::\:b_i\in\mathbb Z\:(1\leq i\leq n)\right\}\]
+ist Untergruppe von $\mathbb Z$, nach \textit{Satz 2(2)} existiert also ein $d\in\mathbb N_0$ mit
+\[\sum_{i=1}^na_i\mathbb Z=d\mathbb Z\qquad(\star)\]
+$d$ heißt der größte gemeinsame Teiler der $a_i$
+\[d=ggT(a_1,\dots,a_n)=gcd(a_1,\dots,a_n)\]
+Insbesondere $d=\sum_{i=1}^na_ib_i$ mit passenden $b_i\in\mathbb Z$.
+\end{defi}
+
+\begin{bem}[Drei charakteristische Eigenschaften für $d=ggT(a_1,\dots,a_n)$]
+\begin{enumerate}[(1)]
+\item $d\in\mathbb N_0$
+\item $d\vert a_i$ ($1\leq i\leq n$)
+\item Ist $t\in\mathbb Z$ mit $t\vert a_i$ ($1\leq i\leq n$), so folgt $t\vert d$.
+\end{enumerate}
+\end{bem}
+
+\begin{bew}
+\begin{enumerate}[(1)]
+\item klar
+\item $(\star)$ $\Rightarrow$ $a_i\mathbb Z\subset d\mathbb Z$ $\Rightarrow$ $d\vert a_i$
+\item $t\vert a_i$ $\Rightarrow$ $t\mathbb Z\supset a_i\mathbb Z$ ($1\leq i\leq n$) $\Rightarrow$ $t\mathbb Z\supset\sum_{i=1}^na_i\mathbb Z=d\mathbb Z$ (weil $t\mathbb Z$ Gruppe) $\Rightarrow$ $t\vert d$
+\end{enumerate}
+Umgekehrt:\\[1ex]
+Erfüllt $d'\in\mathbb Z$ \textit{(1)-(3)}, so folgt $d'=d$\\[1ex]
+zz.: $d'\vert d$, $d\vert d$ $\Rightarrow$ $d=d'$\\[1ex]
+$d'\mathbb Z\supset d\mathbb Z$ und $d\mathbb Z\supset d'\mathbb Z$
+\[d'\mathbb Z=d\mathbb Z,\:d,d'\in\mathbb N_0\:\underset{\Rightarrow}{\text{\textit{Satz 2}}}\:d=d'\]
+\end{bew}
+
+\begin{satz}[Rechenregeln für den ggT]
+\begin{enumerate}[(1)]
+\item $ggT(a,b)=ggT(b,a-qb)$ ($\forall q\in\mathbb Z$)
+\item $ggT(a_1,\dots,a_n)=ggT(a_1,ggT(a_2,\dots,a_n))$ ($\forall n\geq3$)
+\item $ggT(ba_1,\dots,ba_n)=\vert b\vert ggT(a_1,\dots,a_n)$
+\item $ggT(a,bc)=ggT(a,b)$, falls $ggT(a,c)=1$ ist
+\end{enumerate}
+\end{satz}
+
+\begin{bew}
+\begin{enumerate}[(1)]
+\item zz.: $\underbrace{a\mathbb Z+b\mathbb Z}_{ggT(a,b)\mathbb Z}=\underbrace{b\mathbb Z+(a-qb)\mathbb Z}_{ggT(b,a-qb)\mathbb Z}$.
+\item
+\[\sum_{i=1}^na_i\mathbb Z=a_1\mathbb Z+\left(\sum_{i=2}^na_i\mathbb Z\right)\]
+\item
+\[\sum_{i=1}^n(ba_i)\mathbb Z=\vert b\vert\sum_{i=1}^na_i\mathbb Z\]
+\item zz.: $ggT(a,b)\vert ggT(a,bc)$ und $ggT(a,bc)\vert ggT(a,b)$
+\begin{enumerate}[1. Teilbarkeit]
+\item Benutzt werden die 3 charakteristischen Eigenschaften des ggT:
+\begin{itemize}
+\item $ggT(a,b)\vert a$
+\item $ggT(a,b)\vert b$ $\Rightarrow$ $ggT(a,b)\vert bc$
+\end{itemize}
+$\underset{(3)}{\Rightarrow}$ $ggT(a,b)\vert ggT(a,bc)$
+\item 
+\begin{itemize}
+\item $ggT(a,bc)\vert a$ $\Rightarrow$ $ggT(a,bc)\vert ab$
+\item $ggT(a,bc)\vert bc$
+\end{itemize}
+$\underset{(3)}{\Rightarrow}$ $ggT(a,bc)\vert ggT(ab,bc)=\vert b\vert\underbrace{ggT(a,c)}_{=1}$ $\Rightarrow$ $ggT(a,bc)\vert b$ $\wedge$ $ggT(a,bc)\vert a$ $\Rightarrow$ $ggT(a,bc)\vert ggT(a,b)$
+\end{enumerate}
+\end{enumerate}
+\end{bew}
+
+\begin{bem}
+\begin{enumerate}[(1)]
+\item Ist $ggT(a_1,\dots,a_n)=1$, so heißen $a_1,\dots,a_n$ teilerfremd (coprim).
+\item Mit \textit{(2)} des Satzes lässt sich die Berechnung von $ggT(a_1,\dots,a_n)$, $n\geq3$ reduzieren auf die Berechnung von ggT's zweier Zahlen. Dafür gibt es einen schnellen Algorithmus: Wiederholte Division mit Rest:\\[1ex]
+Gegeben: $a_0>a_1>0$\\[1ex]
+Satz 1: $a_0=q_1a_1+a_2$ mit $0\leq a_2<a_1$\\[1ex]
+Falls $a_2\leq0$: $a_1=q_2a_2+a_3$ mit $0\leq a_3<a_2$\\[1ex]
+Die Restefolge $a_2,a_3,\dots$ ist strikt monoton fallend in $\mathbb N_0$, bricht also nach endlich vielen Schritten ab mit 0.
+\begin{align*}
+&\vdots\\
+a_{n-1}&=q_na_n+a_{n+1}\text{ mit }a_{n+1}=0,\:a_n>0
+\end{align*}
+Dann ist $a_n=ggT(a_0,a_1)$, denn \textit{Satz 3(1)}:
+\begin{align*}
+ggT(a_0,a_1)&\underset{\text{1. Gleichung}}{=}ggT(a_1,a_2)\\
+&\underset{\text{2. Gleichung}}{=}ggT(a_2,a_3)\\
+&=ggT(a_n,a_{n+1})=ggT(a_n,0)=a_n
+\end{align*}
+\end{enumerate}
+\end{bem}
